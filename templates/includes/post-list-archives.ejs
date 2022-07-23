@@ -1,0 +1,36 @@
+<% let years=[]; posts.forEach((item)=> { const year = item.date.substring(0, 4); if (!years.includes(year)) {
+  years.push(year); } }); %>
+
+  <div class="archives-container">
+    <% years.forEach(function(year) { %>
+      <h2 class="year">
+        <%- year %>
+      </h2>
+      <% posts.forEach(function(post) { %>
+        <%if (post.date.indexOf(year) !==-1) { %>
+          <article class="post">
+
+            <div class="post-title">
+              <a href="<%= post.link %>">
+                <%= post.title %>
+              </a>
+            </div>
+            <div class="post-info">
+              <div class="small">
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <%= post.dateFormat %>
+                  <i class="fa-solid fa-tags"></i>
+                  <% post.tags.forEach(function(tag) { %>
+                    <a href="<%= tag.link %>" class="post-tag">
+                      # <%= tag.name %>
+                    </a>
+                    <% }); %>
+              </div>
+            </div>
+            </a>
+          </article>
+          <% } %>
+            <% }); %>
+              <% }); %>
+  </div>

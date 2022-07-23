@@ -1,0 +1,41 @@
+<div class="post-container">
+  <% posts.forEach(function(post) { %>
+    <article class="post">
+      <div class="post-title">
+        <a href="<%= post.link %>" class="post-title">
+          <%= post.title %>
+        </a>
+      </div>
+
+
+      <div class="post-info">
+        <i class="fa-solid fa-calendar-days"></i>
+        <time class="post-time">
+          <%= post.dateFormat %> ·
+        </time>
+        <i class="fa-solid fa-stopwatch"></i>
+        <span>
+          读完大约需要<%= post.stats.minutes%>分钟
+        </span>
+
+      </div>
+      <% if (themeConfig.showFeatureImage && post.feature) { %>
+        <a href="<%= post.link %>" class="post-feature-image" style="background-image: url('<%= post.feature %>')">
+        </a>
+        <% } %>
+          <div class="post-abstract">
+            <%- post.abstract %>
+              <a href="<%= post.link %>" class="read-more">阅读全文</a>
+          </div>
+          <div class="post-tags">
+            <i class="fa-solid fa-tags"></i>
+            <% post.tags.forEach(function(tag) { %>
+              <a href="<%= tag.link %>" class="post-tag">
+                # <%= tag.name %>
+              </a>
+              <% }); %>
+          </div>
+          <div class="post-line"></div>
+    </article>
+    <% }); %>
+</div>

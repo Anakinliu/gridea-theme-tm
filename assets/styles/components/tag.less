@@ -1,0 +1,33 @@
+body.tag .main {
+  .main-content {
+    margin-left: 210px;
+    flex-direction: column;
+    // 上一页 和 下一页部分
+    .pagination-container {
+      display: flex;
+      justify-content: space-around;
+      padding: 2em;
+      .prev-page,
+      .next-page {
+        flex: 1;
+        text-align: center;
+        background-color: #ffc402;
+        border: 1em solid #ffc402;
+      }
+      .prev-page:hover,
+      .next-page:hover {
+        color: #2a2935;
+        background-color: #fdfdfd;
+        border: 1em solid #fdfdfd;
+      }
+    }
+    .current-tag-container {
+      h2 {
+        font-size: 3rem;
+        text-align: left;
+        color: #ffc402;
+        padding: 1em 1.2em 0;
+      }
+    }
+  }
+}

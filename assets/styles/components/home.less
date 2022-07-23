@@ -1,0 +1,158 @@
+.post-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  // flex: 1;
+  .post {
+    .post-title {
+      font-size: 3rem;
+      padding: 24px 0;
+      font-weight: 600;
+    }
+    .post-title:hover {
+      color: #ffc402;
+    }
+
+    .post-info {
+      text-align: center;
+      font-size: 0.8em;
+      .post-time {
+        color: @dark-gray;
+      }
+    }
+    .post-feature-image {
+      display: block;
+      width: 100%;
+      padding-top: 32.6%;
+      border-radius: 2px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      transition: all 0.3s;
+      img {
+        width: 100%;
+        // height: 100%
+      }
+      &:hover {
+        transform: scale(1.0082);
+      }
+    }
+    .post-abstract {
+      padding: 24px 0;
+      line-height: 1.5;
+      strong {
+        font-weight: bolder;
+      }
+      a {
+        color: @main-color;
+        transition: all 0.3s;
+        &:hover {
+          color: @dark-main-color;
+          border-bottom: 1px dotted @dark-main-color;
+        }
+      }
+      code {
+        padding: 0 3px;
+        margin: 0 2px;
+        background: rgba(195, 195, 195, 0.41);
+        font-size: 0.9em;
+        border-radius: 2px;
+      }
+    }
+
+    .post-tag {
+      font-size: 0.8em;
+    }
+
+    .post-line {
+      width: 100%;
+      margin-top: 1em;
+      border-bottom: 1px dashed gray;
+    }
+  }
+}
+
+
+
+@media (min-width: 1024px) {
+  .three-container {
+    width: 100vw;
+    margin-left: 210px;
+    display: flex;
+    flex-direction: column;
+
+    // 上一页 和 下一页部分
+    .pagination-container {
+      display: flex;
+      justify-content: space-around;
+      padding: 2em;
+      .prev-page, .next-page {
+        flex: 1;
+        text-align: center;
+        background-color: #ffc402;
+        border: 1em solid #ffc402;
+      }
+      .prev-page:hover, .next-page:hover {
+        color: #2a2935;
+        background-color: #fdfdfd;
+        border: 1em solid #fdfdfd;
+      }
+    }
+  }
+  .post-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    // flex: 1;
+    padding: 1em;
+    .post {
+      width: 50%;
+      padding: 1em;
+
+      .post-title,
+      .post-info {
+        text-align: left;
+      }
+      .post-abstract p {
+        display: inline-block;
+      }
+      .post-abstract a {
+        display: inline-block;
+        border: 0.4em solid #ffc402;
+        font-size: 0.8em;
+        line-height: 1em;
+        background-color: #ffc402;
+        color: white;
+        border-radius: 0.2em;
+      }
+      .post-abstract a:hover {
+        color: #2a2935;
+        border: 0.4em solid #fdfdfd;
+        background-color: #fdfdfd;
+
+      }
+    }
+
+
+  }
+}
+
+@media (max-width: 1024px) {
+  .post-container {
+    .post {
+      padding: 16px 16px;
+      .post-title {
+        padding: 16px 0;
+        font-size: 24px;
+      }
+      .post-abstract {
+        padding: 16px 0;
+      }
+      .post-feature-image {
+        padding-top: 56.25%;
+      }
+    }
+  }
+}
