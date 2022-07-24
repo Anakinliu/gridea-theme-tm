@@ -7,7 +7,7 @@
 <link rel="shortcut icon" href="<%= themeConfig.domain %>/favicon.ico?v=<%= site.utils.now %>">
 <link rel="stylesheet" href="<%= themeConfig.domain %>/styles/main.css">
 
-<script src="https://kit.fontawesome.com/d5fbc1b45c.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/<%= site.customConfig.fontawesome %>.js" crossorigin="anonymous"></script>
 
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 <script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
@@ -16,12 +16,13 @@
 <!-- <script src="media/scripts/index.js"></script> -->
 
 <% if (site.customConfig.ga) { %>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= site.customConfig.ga %>"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%= site.customConfig.ga %>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', '<%= site.customConfig.ga %>');
-  </script>
+  gtag('config', '<%= site.customConfig.ga %>');
+</script>
   <% } %>

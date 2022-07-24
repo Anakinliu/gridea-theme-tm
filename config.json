@@ -1,6 +1,23 @@
 {
-  "name": "Starter",
-  "version": "0.1.0",
-  "author": "EryouHao",
-  "customConfig": []
+  "name": "tm",
+  "version": "0.2.0",
+  "author": "Anakinliu",
+  "customConfig": [
+    {
+      "name": "fontawesome",
+      "label": "icon-font设置",
+      "group": "必填项",
+      "value": "一般是一串随机字符串",
+      "type": "input",
+      "note": "申请地址：https://fontawesome.com/kits"
+    },
+    {
+      "name": "ga",
+      "label": "谷歌分析网站数据流衡量 ID",
+      "group": "谷歌分析",
+      "value": "G-XXXX",
+      "type": "input",
+      "note": "谷歌分析-网站数据流：https://analytics.google.com/analytics/web"
+    }
+  ]
 }
