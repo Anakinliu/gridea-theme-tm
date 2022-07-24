@@ -6,6 +6,11 @@
     <a href="<%= themeConfig.domain %>">
       <%= themeConfig.siteName %>
     </a>
+    <div id="menu-bar" class="menu-bar">
+      <div class="bar-line"></div>
+      <div class="bar-line"></div>
+      <div class="bar-line"></div>
+    </div>
   </div>
 
   <div class="menu-container">
@@ -21,10 +26,19 @@
           <% } %>
             <% }); %>
   </div>
-  <p class="site-description">
-    <%- themeConfig.siteDescription %>
-  </p>
-  <div class="social-container">
+
+
+  <% if(typeof post !=='undefined' ) { %>
+    <div class="toc-container">
+      <%- post.toc %>
+    </div>
+    <% } %>
+
+      <p class="site-description">
+
+        <%- themeConfig.siteDescription %>
+      </p>
+      <!-- <div class="social-container">
     <% ['github', 'twitter' , 'weibo' , 'zhihu' , 'facebook' ].forEach((item)=> { %>
       <% if (site.customConfig[item]) { %>
         <a href="<%= site.customConfig[item] %>" target="_blank">
@@ -32,5 +46,5 @@
         </a>
         <% } %>
           <% }) %>
-  </div>
+  </div> -->
 </div>

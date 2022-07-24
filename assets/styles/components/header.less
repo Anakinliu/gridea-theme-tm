@@ -4,9 +4,27 @@
   background-color: #2a2935;
 
   .site-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 2rem;
     font-weight: bold;
     padding: 0.5em;
+
+    .menu-bar {
+      display: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 2.5em;
+      height: 1.8em;
+      border: black 2px solid;
+      border-radius: 0.2em;
+      padding: 0.4em;
+      .bar-line {
+        border: 1px solid white;
+      }
+    }
   }
 
   .site-title a {
@@ -39,22 +57,28 @@
     height: 120px;
   }
 
-  .social-container {
-    padding: 16px;
-    font-size: 18px;
-    a {
-      margin: 4 8px;
-      color: #868e96;
-    }
-  }
+  // .social-container {
+  //   padding: 16px;
+  //   font-size: 18px;
+  //   a {
+  //     margin: 4 8px;
+  //     color: #868e96;
+  //   }
+  // }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .site-header {
     position: fixed;
     min-height: 100vh;
     width: 210px;
     text-align: right;
+    .site-title {
+      justify-content: flex-end;
 
+      .menu-bar {
+        display: none;
+      }
+    }
     .site-description {
       width: 100%;
       position: absolute;
@@ -86,16 +110,149 @@
         background-clip: padding-box;
       }
     }
+    .toc-container {
+      overflow: hidden;
+      margin: 1em;
+      border: 0.2em black solid;
+      border-radius: 0.5em;
+      ul {
+        width: 180px;
+        list-style: none;
+        li {
+          text-align: left;
+          a {
+            color: #fdfdfd;
+            line-height: 2em;
+          }
+          a:hover {
+            color: #ffc402;
+          }
+        }
+      }
+      ul ul {
+        padding-left: 1em;
+      }
+    }
   }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .site-header {
-    padding: 24px 0 0;
+    position: fixed;
+    min-height: 100vh;
+    width: 210px;
+    text-align: right;
+    .site-title {
+      justify-content: flex-end;
+      .menu-bar {
+        display: none;
+      }
+    }
+    .site-description {
+      width: 100%;
+      position: absolute;
+      bottom: 1em;
+      font-size: 1rem;
+      padding: 1em 0.5em;
+      color: #666666;
+      text-align: center;
+      line-height: 2em;
+    }
 
-    .avatar {
-      width: 80px;
-      height: 80px;
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+      a.menu {
+        color: white;
+        font-size: 2rem;
+        padding: 1em;
+        flex-shrink: 0;
+        font-weight: 600;
+        border-right: 0.5em #2a2935 solid;
+      }
+
+      a.menu:hover {
+        color: #2a2935;
+        background-color: #e7e7e7;
+        background-clip: padding-box;
+      }
+    }
+
+    .toc-container {
+      overflow: hidden;
+      margin: 1em;
+      border: 0.2em black solid;
+      border-radius: 0.5em;
+      ul {
+        width: 180px;
+        list-style: none;
+        li {
+          text-align: left;
+          a {
+            color: #fdfdfd;
+            line-height: 2em;
+          }
+          a:hover {
+            color: #ffc402;
+          }
+          a.current {
+            color: #ffc402;
+          }
+        }
+      }
+      ul ul {
+        padding-left: 1em;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    // min-height: 100vh;
+    width: 100%;
+    text-align: right;
+    .site-title {
+      .menu-bar {
+        display: flex;
+      }
+    }
+    .site-description {
+      width: 100%;
+      position: absolute;
+      bottom: 1em;
+      font-size: 1rem;
+      padding: 1em 0.5em;
+      color: #666666;
+      text-align: center;
+      line-height: 2em;
+    }
+
+    .menu-container {
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+      a.menu {
+        color: white;
+        font-size: 2rem;
+        padding: 1em;
+        flex-shrink: 0;
+        font-weight: 600;
+        border-right: 0.5em #2a2935 solid;
+      }
+
+      a.menu:hover {
+        color: #2a2935;
+        background-color: #e7e7e7;
+        background-clip: padding-box;
+      }
+    }
+    .toc-container {
+      display: none;
     }
   }
 }

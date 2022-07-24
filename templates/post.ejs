@@ -4,7 +4,7 @@
   <%- include('./includes/head', { siteTitle: `${post.title} | ${themeConfig.siteName}` }) %>
     <link rel="stylesheet" href="<%= themeConfig.domain %>/styles/main.css">
     <script src="<%= themeConfig.domain %>/media/scripts/clipboard.min.js"></script>
-  </head>
+</head>
 
 <body class="post">
   <div class="main">
@@ -16,20 +16,35 @@
             <h2 class="post-title">
               <%= post.title %>
             </h2>
+
+            <div class="post-info-line"></div>
             <div class="post-info">
               <time class="post-time">
-                · <%= post.dateFormat %> ·
+                <i class="fa-solid fa-calendar-days"></i>
+                <%= post.dateFormat %> ·
               </time>
+              <i class="fa-solid fa-tags"></i>
               <% post.tags.forEach(function(tag) { %>
                 <a href="<%= tag.link %>" class="post-tags">
                   # <%= tag.name %>
                 </a>
                 <% }); %>
+                  · <i class="fa-solid fa-file-pen"></i>
+                  <span>
+                    <%= post.stats.words %>字
+                  </span>
+                  <span>
+                    · <i class="fa-solid fa-stopwatch"></i>
+                    <%= post.stats.minutes %>分钟阅读
+                  </span>
             </div>
+            <div class="post-info-line"></div>
+
             <% if (themeConfig.showFeatureImage && post.feature) { %>
               <div class="post-feature-image" style="background-image: url('<%= post.feature %>')">
               </div>
               <% } %>
+
                 <div class="post-content">
                   <%- post.content %>
                 </div>
@@ -75,24 +90,9 @@
     </div>
   </div>
   <script src="<%= themeConfig.domain %>/media/scripts/code-copy.js"></script>
-
-  <script>
-    (function () {
-      /* 
-      此函数用来高亮页面左侧 header 的 “关于” 链接，sitename/post/about/
-      */
-      const path = location.pathname.slice(0, -1);
-      const navLinks = document.querySelectorAll('a.menu');
-      for (let link of navLinks) {
-        const linkHref = link.getAttribute('href');
-        if (linkHref === path) {
-          link.style.color = '#ffc402';
-          link.style.backgroundColor = '#26252f';
-          link.style.borderRight = '.5em #ffc402 solid';
-        }
-      }
-    })()
-  </script>
+  <script src="<%= themeConfig.domain %>/media/scripts/highlight-nav-link.js"></script>
+  <script src="<%= themeConfig.domain %>/media/scripts/menu-bar.js"></script>
+  <script src="<%= themeConfig.domain %>/media/scripts/toc.js"></script>
 </body>
 
 </html>

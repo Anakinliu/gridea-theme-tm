@@ -2,6 +2,8 @@ body.tag .main {
   .main-content {
     margin-left: 210px;
     flex-direction: column;
+    background-color: #fdfdfd;
+
     // 上一页 和 下一页部分
     .pagination-container {
       display: flex;
@@ -28,6 +30,14 @@ body.tag .main {
         color: #ffc402;
         padding: 1em 1.2em 0;
       }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  body.tag .main {
+    .main-content {
+      margin-left: 0;
     }
   }
 }

@@ -1,5 +1,8 @@
+body.post .main {
+  background-color: #fdfdfd;
+}
+
 .post-detail {
-  margin-left: 210px;
   flex: 1;
   .post {
     padding: 24px 32px;
@@ -17,11 +20,13 @@
       padding: 24px;
       font-weight: 600;
     }
-
+    .post-info-line {
+      border: 1px dashed gray;
+    }
     .post-info {
       text-align: center;
       font-size: 12px;
-      padding-bottom: 24px;
+      padding: 1em 0;
 
       .post-time {
         color: @dark-gray;
@@ -33,6 +38,7 @@
     }
 
     .post-content {
+      padding-top: 1em;
       a {
         color: @main-color;
         transition: all 0.3s;
@@ -143,31 +149,11 @@
   }
 }
 
-.sibling-post {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-left: 210px;
-
-  .prev-post, .next-post {
-    text-align: center;
-    padding: 2em;
-    .prev, .next {
-      margin-bottom: 24px;
-      color: @oc-gray-8;
-    }
-    .post-title {
-      font-size: 20px;
-      font-weight: bold;
-    }
-  }
-}
-
 #gitalk-container,
 #disqus_thread {
   padding: 24px 32px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   body.post .main {
     .main-content {
       flex-direction: column;
@@ -176,6 +162,52 @@
         border-bottom: 2px solid @dark-main-color;
       }
 
+      .post-detail {
+        margin-left: 210px;
+
+        .post {
+          padding: 16px;
+          .post-title {
+            font-size: 3rem;
+            padding: 1em 0;
+            text-align: left;
+          }
+          .post-info {
+            text-align: left;
+          }
+        }
+      }
+      .sibling-post {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-left: 210px;
+
+        .prev-post,
+        .next-post {
+          text-align: center;
+          padding: 2em;
+          .prev,
+          .next {
+            margin-bottom: 24px;
+            color: @oc-gray-8;
+          }
+          .post-title {
+            font-size: 20px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  body.post .main {
+    .main-content {
+      flex-direction: column;
+      .post-line {
+        border-bottom: 2px solid @dark-main-color;
+      }
       .post-detail {
         .post {
           padding: 16px;
@@ -189,16 +221,26 @@
           }
         }
       }
-    }
-  }
-}
-@media (max-width: 1024px) {
-  .post-detail {
-    .post {
-      padding: 16px;
-      .post-title {
-        font-size: 24px;
-        padding: 16px 0;
+      .sibling-post {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        // margin-left: 210px;
+
+        .prev-post,
+        .next-post {
+          text-align: center;
+          padding: 2em;
+          .prev,
+          .next {
+            margin-bottom: 24px;
+            color: @oc-gray-8;
+          }
+          .post-title {
+            font-size: 20px;
+            font-weight: bold;
+          }
+        }
       }
     }
   }

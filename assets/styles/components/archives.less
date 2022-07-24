@@ -1,4 +1,8 @@
-@media (min-width: 1024px) {
+body.archives .main {
+  background-color: #fdfdfd;
+}
+
+@media (min-width: 768px) {
   body.archives .main {
     .main-content {
       margin-left: 210px;
@@ -48,11 +52,30 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
   body.archives .main {
     .main-content {
-      margin-left: 210px;
+      // margin-left: 210px;
       flex-direction: column;
+      // 上一页 和 下一页部分
+      .pagination-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 2em;
+        .prev-page,
+        .next-page {
+          flex: 1;
+          text-align: center;
+          background-color: #ffc402;
+          border: 1em solid #ffc402;
+        }
+        .prev-page:hover,
+        .next-page:hover {
+          color: #2a2935;
+          background-color: #fdfdfd;
+          border: 1em solid #fdfdfd;
+        }
+      }
 
       .archives-container {
         font-size: 1rem;

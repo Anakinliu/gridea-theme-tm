@@ -1,19 +1,23 @@
 <html>
-  <head>
-    <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
-  </head>
-  <body class="archives">
-    <div class="main">
-      <%- include('./includes/header') %>
+
+<head>
+  <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+</head>
+
+<body class="archives">
+  <div class="main">
+    <%- include('./includes/header') %>
 
       <div class="main-content">
-    
+
         <%- include('./includes/post-list-archives') %>
-    
-        <%- include('./includes/pagination') %>
-    
-        <%- include('./includes/footer') %>
+
+          <%- include('./includes/pagination') %>
+
+            <%- include('./includes/footer') %>
       </div>
-    </div>
-  </body>
+  </div>
+  <script src="<%= themeConfig.domain %>/media/scripts/menu-bar.js"></script>
+</body>
+
 </html>

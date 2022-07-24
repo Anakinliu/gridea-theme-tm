@@ -1,3 +1,7 @@
+.three-container {
+  background-color: #fdfdfd;
+}
+
 .post-container {
   width: 100%;
   display: flex;
@@ -9,6 +13,11 @@
       font-size: 3rem;
       padding: 24px 0;
       font-weight: 600;
+
+      .pinned {
+        display: inline-block;
+        color: #ffc402;
+      }
     }
     .post-title:hover {
       color: #ffc402;
@@ -73,9 +82,7 @@
   }
 }
 
-
-
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .three-container {
     width: 100vw;
     margin-left: 210px;
@@ -87,13 +94,15 @@
       display: flex;
       justify-content: space-around;
       padding: 2em;
-      .prev-page, .next-page {
+      .prev-page,
+      .next-page {
         flex: 1;
         text-align: center;
         background-color: #ffc402;
         border: 1em solid #ffc402;
       }
-      .prev-page:hover, .next-page:hover {
+      .prev-page:hover,
+      .next-page:hover {
         color: #2a2935;
         background-color: #fdfdfd;
         border: 1em solid #fdfdfd;
@@ -131,27 +140,137 @@
         color: #2a2935;
         border: 0.4em solid #fdfdfd;
         background-color: #fdfdfd;
-
       }
     }
-
-
   }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+  .three-container {
+    width: 100vw;
+    margin-left: 210px;
+    display: flex;
+    flex-direction: column;
+
+    // 上一页 和 下一页部分
+    .pagination-container {
+      display: flex;
+      justify-content: space-around;
+      padding: 2em;
+      .prev-page,
+      .next-page {
+        flex: 1;
+        text-align: center;
+        background-color: #ffc402;
+        border: 1em solid #ffc402;
+      }
+      .prev-page:hover,
+      .next-page:hover {
+        color: #2a2935;
+        background-color: #fdfdfd;
+        border: 1em solid #fdfdfd;
+      }
+    }
+  }
   .post-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    // flex: 1;
+    padding: 1em;
     .post {
-      padding: 16px 16px;
-      .post-title {
-        padding: 16px 0;
-        font-size: 24px;
+      width: 100%;
+      padding: 1em;
+
+      .post-title,
+      .post-info {
+        text-align: left;
       }
-      .post-abstract {
-        padding: 16px 0;
+      .post-abstract p {
+        display: inline-block;
       }
-      .post-feature-image {
-        padding-top: 56.25%;
+      .post-abstract a {
+        display: inline-block;
+        border: 0.4em solid #ffc402;
+        font-size: 0.8em;
+        line-height: 1em;
+        background-color: #ffc402;
+        color: white;
+        border-radius: 0.2em;
+      }
+      .post-abstract a:hover {
+        color: #2a2935;
+        border: 0.4em solid #fdfdfd;
+        background-color: #fdfdfd;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  body.index {
+    .main .main-content {
+      flex-direction: column;
+    }
+  }
+  .three-container {
+    width: 100vw;
+    // margin-left: 210px;
+    display: flex;
+    flex-direction: column;
+
+    // 上一页 和 下一页部分
+    .pagination-container {
+      display: flex;
+      justify-content: space-around;
+      padding: 2em;
+      .prev-page,
+      .next-page {
+        flex: 1;
+        text-align: center;
+        background-color: #ffc402;
+        border: 1em solid #ffc402;
+      }
+      .prev-page:hover,
+      .next-page:hover {
+        color: #2a2935;
+        background-color: #fdfdfd;
+        border: 1em solid #fdfdfd;
+      }
+    }
+  }
+  .post-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    // flex: 1;
+    padding: 1em;
+    .post {
+      width: 100%;
+      padding: 1em;
+
+      .post-title,
+      .post-info {
+        text-align: left;
+      }
+      .post-abstract p {
+        display: inline-block;
+      }
+      .post-abstract a {
+        display: inline-block;
+        border: 0.4em solid #ffc402;
+        font-size: 0.8em;
+        line-height: 1em;
+        background-color: #ffc402;
+        color: white;
+        border-radius: 0.2em;
+      }
+      .post-abstract a:hover {
+        color: #2a2935;
+        border: 0.4em solid #fdfdfd;
+        background-color: #fdfdfd;
       }
     }
   }

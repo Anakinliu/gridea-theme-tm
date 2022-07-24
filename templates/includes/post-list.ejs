@@ -5,6 +5,10 @@
         <a href="<%= post.link %>" class="post-title">
           <%= post.title %>
         </a>
+        <% if(post.isTop) { %>
+          <div class="pinned"> <i class="fa-solid fa-thumbtack">置顶</i>
+          </div>
+          <% } %>
       </div>
 
 

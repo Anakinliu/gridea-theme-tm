@@ -2,6 +2,7 @@ body.tags {
   .main-content {
     margin-left: 210px;
     flex-direction: column;
+    background-color: #fdfdfd;
 
     .current-tag-container {
       h2 {
@@ -17,19 +18,27 @@ body.tags {
       flex: 1;
       .tag {
         display: inline-block;
-        padding: .5em;
-        margin: .5em 1em;
+        padding: 0.5em;
+        margin: 0.5em 1em;
         background: #2a2935;
         color: white;
-        border: .5em solid #2a2935;
+        border: 0.5em solid #2a2935;
       }
       .tag:hover {
         display: inline-block;
-        padding: .5em;
-        margin: .5em 1em;
+        padding: 0.5em;
+        margin: 0.5em 1em;
         color: #ffc402;
-        border: .5em solid #ffc402;
+        border: 0.5em solid #ffc402;
       }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  body.tags {
+    .main-content {
+      margin-left: 0;
     }
   }
 }
