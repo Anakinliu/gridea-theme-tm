@@ -24,8 +24,12 @@
 
 主题首页：
 
-![site](https://user-images.githubusercontent.com/16507329/180608559-8c2ce300-8151-4090-b37c-d52175f98a22.png)
+![image](https://user-images.githubusercontent.com/16507329/180643413-64ee579b-49c8-436f-b318-6055e056a4b5.png)
+
 
 美图技术团队文章首页：
 
 ![mt](https://user-images.githubusercontent.com/16507329/180608551-08261054-7ed3-4bfc-b1ca-b7f1f0c13ed9.png)
+
+移动端：
+![image](https://user-images.githubusercontent.com/16507329/180672379-7a5c3bf0-13b9-4810-93eb-06bf42628212.png)

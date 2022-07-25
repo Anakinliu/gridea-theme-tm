@@ -1,5 +1,9 @@
+/**
+ * 此文件修改header部分的样式
+ */
+
 function actualResizeHandler() {
-    // handle the resize event
+    // 监听窗口改变，属于媒体查询暂时处理不了的情况
     const e1 = document.querySelector('.menu-container');
     const e2 = document.querySelector('.site-description');
     if (window.innerWidth >= 768) {
@@ -12,14 +16,15 @@ function actualResizeHandler() {
         e2.style.position = 'relative';
     }
 };
-// 先执行一下
+
+// 打开网站时就执行一下
 actualResizeHandler();
 
 (function () {// 从MDN抄的😁
     window.addEventListener("resize", resizeThrottler, false);
 
     var resizeTimeout;
-    function resizeThrottler() {
+    function resizeThrottler() {  // 节流方式执行函数
         // ignore resize events as long as an actualResizeHandler execution is in the queue
         if (!resizeTimeout) {
             resizeTimeout = setTimeout(function () {
@@ -31,6 +36,8 @@ actualResizeHandler();
         }
     }
 }());
+
+// menu-bar的点击事件
 (function () {
     const menuBar = document.querySelector('#menu-bar');
     menuBar.addEventListener('click', () => {

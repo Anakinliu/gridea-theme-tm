@@ -69,6 +69,7 @@
 @media (min-width: 1025px) {
   .site-header {
     position: fixed;
+    overflow-y: auto;
     min-height: 100vh;
     width: 210px;
     text-align: right;
@@ -110,27 +111,44 @@
         background-clip: padding-box;
       }
     }
-    .toc-container {
-      overflow: hidden;
-      margin: 1em;
+
+    .toc-box {
+      max-height: 20em;
+      overflow-y: auto;
       border: 0.2em black solid;
+      margin: 0.5em;
       border-radius: 0.5em;
-      ul {
+      .toc-container {
         width: 180px;
-        list-style: none;
-        li {
-          text-align: left;
-          a {
-            color: #fdfdfd;
-            line-height: 2em;
-          }
-          a:hover {
-            color: #ffc402;
+        border-radius: 0.5em;
+        padding: 0.2em;
+
+        ul {
+          width: 100%;
+          list-style: none;
+          li {
+            border-left: 1px dashed #ffc402;
+            text-align: left;
+            line-height: 1.5em;
+            a {
+              color: #fdfdfd;
+            }
+            a:hover {
+              color: #ffc402;
+            }
+            a.current {
+              color: #ffc402;
+            }
           }
         }
-      }
-      ul ul {
-        padding-left: 1em;
+
+        .markdownIt-TOC > li {
+          border: none;
+        }
+
+        ul ul {
+          padding-left: 1em;
+        }
       }
     }
   }
@@ -179,31 +197,43 @@
         background-clip: padding-box;
       }
     }
-
-    .toc-container {
-      overflow: hidden;
-      margin: 1em;
+    .toc-box {
+      max-height: 20em;
+      overflow-y: auto;
       border: 0.2em black solid;
+      margin: 0.5em;
       border-radius: 0.5em;
-      ul {
+      .toc-container {
         width: 180px;
-        list-style: none;
-        li {
-          text-align: left;
-          a {
-            color: #fdfdfd;
-            line-height: 2em;
-          }
-          a:hover {
-            color: #ffc402;
-          }
-          a.current {
-            color: #ffc402;
+        border-radius: 0.5em;
+        padding: 0.2em;
+
+        ul {
+          width: 100%;
+          list-style: none;
+          li {
+            border-left: 1px dashed #ffc402;
+            text-align: left;
+            line-height: 1.5em;
+            a {
+              color: #fdfdfd;
+            }
+            a:hover {
+              color: #ffc402;
+            }
+            a.current {
+              color: #ffc402;
+            }
           }
         }
-      }
-      ul ul {
-        padding-left: 1em;
+
+        .markdownIt-TOC > li {
+          border: none;
+        }
+
+        ul ul {
+          padding-left: 1em;
+        }
       }
     }
   }
@@ -251,7 +281,7 @@
         background-clip: padding-box;
       }
     }
-    .toc-container {
+    .toc-box {
       display: none;
     }
   }

@@ -26,11 +26,12 @@
           <% } %>
             <% }); %>
   </div>
-
-
-  <% if(typeof post !=='undefined' ) { %>
-    <div class="toc-container">
-      <%- post.toc %>
+  
+  <% if((typeof post !=='undefined' ) && post.toc) { %>
+    <div class="toc-box">
+      <div class="toc-container">
+        <%- post.toc %>
+      </div>
     </div>
     <% } %>
 

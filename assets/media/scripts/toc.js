@@ -1,3 +1,7 @@
+/**
+ * 目录toc相关JS代码
+ */
+
 (function () {// 从MDN抄的😁
     window.addEventListener("scroll", scrollThrottler, false);
     const tocLinks = document.querySelectorAll('.toc-container .markdownIt-TOC a');

@@ -12,6 +12,7 @@
       <%- include('./includes/header') %>
 
         <div class="post-detail">
+
           <article class="post">
             <h2 class="post-title">
               <%= post.title %>
@@ -40,14 +41,14 @@
             </div>
             <div class="post-info-line"></div>
 
-            <% if (themeConfig.showFeatureImage && post.feature) { %>
+            <!-- <% if (post.feature) { %>
               <div class="post-feature-image" style="background-image: url('<%= post.feature %>')">
               </div>
-              <% } %>
+              <% } %> -->
 
-                <div class="post-content">
-                  <%- post.content %>
-                </div>
+            <div class="post-content">
+              <%- post.content %>
+            </div>
           </article>
         </div>
 
@@ -87,12 +88,15 @@
                       <% } %>
 
                         <%- include('./includes/footer') %>
+
+                          
     </div>
   </div>
   <script src="<%= themeConfig.domain %>/media/scripts/code-copy.js"></script>
   <script src="<%= themeConfig.domain %>/media/scripts/highlight-nav-link.js"></script>
   <script src="<%= themeConfig.domain %>/media/scripts/menu-bar.js"></script>
   <script src="<%= themeConfig.domain %>/media/scripts/toc.js"></script>
+  <script src="<%= themeConfig.domain %>/media/scripts/image-alt.js"></script>
 </body>
 
 </html>

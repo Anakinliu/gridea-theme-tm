@@ -4,6 +4,8 @@ body.post .main {
 
 .post-detail {
   flex: 1;
+  position: relative;
+  
   .post {
     padding: 24px 32px;
     .post-feature-image {
@@ -50,9 +52,10 @@ body.post .main {
       img {
         display: block;
         box-shadow: 0 0 30px #eee;
+        border: 2px solid #ffc402;
         max-width: 100%;
-        border-radius: 2px;
-        margin: 24px auto;
+        border-radius: 1em;
+        margin: 0.5em auto;
       }
 
       p {
@@ -60,6 +63,13 @@ body.post .main {
         margin-bottom: 24px;
         font-size: 16px;
         letter-spacing: 1.0382;
+      }
+      p.img-alt {
+        text-align: center;
+        color: #ffc402;
+        border: 2px solid #ffc402;
+        border-radius: 0 0 0.5em 0.5em;
+        border-top: none;
       }
 
       p,
